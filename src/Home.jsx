@@ -13,17 +13,9 @@ import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import CountUp from "react-countup";
 import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
-import Coordinationicon from "./Images/icon1.png";
-import Customerserviceicon from "./Images/icon2.png";
-import Safetyprotocolsicon from "./Images/icon3.png";
+
 import "./App.css";
-import WingsBanner from "./Images/WingsWayBanner.jpg";
-// import Crew from "./Images/Course Content.png";
-// import CourseContent from "./Images/Course Content.jpg";
-// import EntryQualification from "./Images/Entry Qualification.jpg";
-import LearningOutcomes from "./Images/Learning Outcomes.png";
-// import CareerOpportunities from "./Images/Career Opportunities.jpg";
-// import LearnerProfile from "./Images/Learner’s Profile.jpg";
+
 import ISO from "./Images/ISOCertified.png";
 import KHDA from "./Images/KHDA.png";
 import IATA from "./Images/IATA.png";
@@ -1159,9 +1151,9 @@ export default function Home({ handleModalOpen }) {
           </div>
           <div
             className={`row aboutdivwidth mt-4 mt-lg-3 slide-in-left  ${
-              hasViewedSlide.thirdElement ? "animate-slide-in" : ""
+              hasViewedSlide.fourthElement ? "animate-slide-in" : ""
             }`}
-            ref={myRef3}
+            ref={myRef4}
           >
             {" "}
             <div className="col-12  d-flex align-items-center justify-content-center justify-content-between flex-wrap mt-3">
@@ -1226,9 +1218,9 @@ export default function Home({ handleModalOpen }) {
         <div className="container-fluid bg-light border border-light">
           <div
             className={`row d-flex align-items-center justify-content-center mt-3 mt-lg-3 aboutdivwidth slide-in-left ${
-              hasViewedSlide.fourthElement ? "animate-enquire" : ""
+              hasViewedSlide.fifthElement ? "animate-enquire" : ""
             }`}
-            ref={myRef4}
+            ref={myRef5}
           >
             {/* Content Section */}
             <div className="col-12 col-lg-6 order-2 order-lg-2">
@@ -1446,9 +1438,9 @@ export default function Home({ handleModalOpen }) {
         <div className="container-fluid bg-light border border-light">
           <div
             className={`row bg-light d-flex align-items-center justify-content-center mt-5 aboutdivwidth slide-in-left ${
-              hasViewedSlide.fifthElement ? "animate-slide-in" : ""
+              hasViewedSlide.sixthElement ? "animate-slide-in" : ""
             }`}
-            ref={myRef5}
+            ref={myRef6}
           >
             {/* Content Section */}
             <div className="col-12 col-lg-6 order-2 order-lg-1 mt-2  ">
@@ -1557,9 +1549,9 @@ export default function Home({ handleModalOpen }) {
         <div className="container-fluid bg-light border border-light  ">
           <div
             className={`row  bg-light d-flex align-items-center justify-content-center mt-5 aboutdivwidth slide-in-left  ${
-              hasViewedSlide.sixthElement ? "animate-enquire" : ""
+              hasViewedSlide.seventhElement ? "animate-enquire" : ""
             }`}
-            ref={myRef6}
+            ref={myRef7}
           >
             <div className="col-12 col-lg-6 order-2 order-lg-2">
               <h2
@@ -1654,9 +1646,9 @@ export default function Home({ handleModalOpen }) {
         <div className="container-fluid bg-light border border-light pb-5">
           <div
             className={`row bg-light d-flex align-items-center justify-content-center mt-5 aboutdivwidth slide-in-left   ${
-              hasViewedSlide.seventhElement ? "animate-slide-in" : ""
+              hasViewedSlide.eigthElement ? "animate-slide-in" : ""
             }`}
-            ref={myRef7}
+            ref={myRef8}
           >
             <div className="col-12 col-lg-6 order-2 order-lg-1 mt-2 ">
               <h1
@@ -1787,9 +1779,9 @@ export default function Home({ handleModalOpen }) {
         <div className="container-fluid contactbannerbackImage p-5">
           <div
             className={`row slide-in-left d-flex  align-items-center Stillsection  ${
-              hasViewedSlide.eigthElement ? "animate-enquire" : ""
+              hasViewedSlide.ninethElement ? "animate-enquire" : ""
             }`}
-            ref={myRef8}
+            ref={myRef9}
             // style={{ width: "80%", margin: "0 auto" }}
           >
             {/* Icon Section */}
@@ -1823,9 +1815,9 @@ export default function Home({ handleModalOpen }) {
 
         <div
           className={` container-fluid  mt-5   rounded-4 slide-in-left    ${
-            hasViewedSlide.ninethElement ? "animate-enquire" : ""
+            hasViewedSlide.tenthElement ? "animate-enquire" : ""
           }`}
-          ref={myRef9}
+          ref={myRef10}
           id="Testimonials"
         >
           <div className="row  d-flex align-items-center justify-content-center  aboutdivwidth">
@@ -1935,9 +1927,9 @@ export default function Home({ handleModalOpen }) {
         <div className="container-fluid elevatebannerbackImage elevatewidth p-3 pb-4 mt-5 p-lg-5">
           <div
             className={`row slide-in-left d-flex justify-content-center align-items-center elevatewidth  p-lg-2 p-xl-5  ${
-              hasViewedSlide.tenthElement ? "animate-slide-in" : ""
+              hasViewedSlide.eleventhElement ? "animate-slide-in" : ""
             }`}
-            ref={myRef10}
+            ref={myRef11}
           >
             <div className="col-12">
               <h1 className="text-center text-white Getintouchheading">
