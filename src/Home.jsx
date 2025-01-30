@@ -1043,21 +1043,11 @@ export default function Home({ handleModalOpen }) {
                         Course Description
                       </h1>
                       <p className="mt-2 ms-1">
-                        This IATA-certified Travel and Tourism diploma is
-                        curated for anybody interested to work in the exciting
-                        industry of travel and tourism. It covers 13 essential
-                        modules that will make you an expert in arranging travel
-                        plans end-to-end, including transport essentials, the
-                        role of geography in travel planning, booking tools,
-                        airfare details, and the influence of technology on the
-                        industry.
+                      This IATA-certified Travel and Tourism diploma is curated for anybody interested to work in the exciting industry of travel and tourism. It covers 13 essential modules that will make you an expert in arranging travel plans end-to-end, including transport essentials, the role of geography in travel planning, booking tools, airfare details, and the influence of technology on the industry.
                       </p>
 
                       <p className="mt-2 ms-1">
-                        Our offerings extend beyond education, encompassing
-                        guaranteed international internships, grooming sessions,
-                        CV-building support, mock interviews, job search
-                        assistance, and more.
+                      Our offerings extend beyond education, encompassing guaranteed internships at international airports in the UAE, grooming sessions, CV-building support, mock interviews, and more.
                       </p>
                     </motion.div>
                   </div>
