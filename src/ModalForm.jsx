@@ -459,7 +459,7 @@ function ModalForm({isModalVisible, handleModalClose }) {
                 </Space.Compact>
               </Form.Item>
               <Form.Item>
-                <div className="d-flex justify-content-end">
+                <div className="d-flex justify-content-center">
                   <AntButton
                     type="default"
                     htmlType="submit"

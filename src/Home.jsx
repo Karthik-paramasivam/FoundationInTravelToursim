@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import BackgroundImage from "./Images/Backgroundimage.jpeg";
 import { Button, Form, Input, Select, message, Space } from "antd";
-import { motion } from "framer-motion"; // Import framer-motion for animations
+import { motion } from "framer-motion";
 import "./App.css";
 import { useInView } from "react-intersection-observer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -13,9 +13,7 @@ import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import CountUp from "react-countup";
 import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
-
 import "./App.css";
-
 import ISO from "./Images/ISOCertified.png";
 import KHDA from "./Images/KHDA.png";
 import IATA from "./Images/IATA.png";
@@ -32,6 +30,8 @@ import CourseContent from "./Images/CourseContent.jpg";
 import CareerOpportunities from "./Images/CareerOpportunities.jpg";
 import EntryQualification from "./Images/EntryQualificationImage.jpg";
 import LearnerProfile from "./Images/LearnerImage.jpg";
+import IATALogo from "./Images/IATALogo.png";
+import CourseDescription from "./Images/CourseDescription.jpg";
 
 export default function Home({ handleModalOpen }) {
   const [form] = Form.useForm(); // useForm hook for handling form operations
@@ -694,14 +694,22 @@ export default function Home({ handleModalOpen }) {
                   animate={{ opacity: 1 }}
                   transition={{ duration: 1.5 }}
                 >
+                  <img
+                    src={IATALogo}
+                    alt="IATA Image"
+                    className="img-fluid mt-3 mt-lg-0 IATALogoWidth"
+                  />
+
                   <h1
-                    className="text-white ms-1 mt-3 mt-md-3 ms-md-3 heroheading"
+                    className="text-white ms-3 mt-0 mt-md-0 mt-xxl-0 heroheading"
                     // style={{ fontSize: "60px", fontWeight: "700" }}
                   >
                     Launch Your <br />
-                    Travel and Tourism Career
+                    <span style={{ color: "#F3BC44" }}>
+                      Travel and Tourism Career
+                    </span>
                   </h1>
-                  <p className="text-white  ms-1 ms-md-3 herotext">
+                  <p className="text-white  ms-3 herotext">
                     Join our comprehensive Foundation in Travel and Tourism
                     Diploma to turn your passion for travel into a career.{" "}
                   </p>
@@ -724,7 +732,7 @@ export default function Home({ handleModalOpen }) {
                     className="rounded-5"
                     layout="vertical"
                     onFinish={handleSubmit}
-                    style={{ backgroundColor: "#0971CE", padding: "20px" }}
+                    style={{ padding: "20px" }}
                   >
                     {/* Form Fields */}
                     <Form.Item
@@ -810,7 +818,7 @@ export default function Home({ handleModalOpen }) {
                       </Space.Compact>
                     </Form.Item>
                     <Form.Item>
-                      <div className="d-flex justify-content-end">
+                      <div className="d-flex justify-content-center">
                         <Button
                           type="default"
                           htmlType="submit"
@@ -844,7 +852,7 @@ export default function Home({ handleModalOpen }) {
               </h1>
             </div>
           </div>
-          <div
+          {/* <div
             className={`row   d-flex align-items-center mt-1 p-lg-4 justify-content-center WhyChoose-container custom-background slide-in-left   ${
               hasViewedSlide.zeroElement ? "animate-slide-in" : ""
             }`}
@@ -886,6 +894,88 @@ export default function Home({ handleModalOpen }) {
               </div>
               <p className="mt-3 text-center">
                 We are committed to quality management and continuous
+                improvement.
+              </p>
+            </div>
+          </div> */}
+
+          <div
+            className={`row d-flex align-items-start mt-2 p-xxl-5 justify-content-center WhyChoose-container custom-background slide-in-left ${
+              hasViewedSlide.zeroElement ? "animate-slide-in" : ""
+            }`}
+            style={{ borderRadius: "10px" }}
+            ref={myRef0}
+          >
+            <div className="col-12">
+              <h2 className="text-center mt-1 RecognitionsHeading">
+                Recognitions and Qualifications
+              </h2>
+            </div>
+
+            {/* IATA Logo Section */}
+            <div className="col-12 col-lg-4 mt-3 recognitionsBorder d-flex flex-column justify-content-start align-items-center text-center">
+              <div
+                className="d-flex justify-content-center align-items-center"
+                style={{ height: "120px" }}
+              >
+                <img
+                  src={IATA}
+                  alt="IATA Logo"
+                  className="img-fluid"
+                  style={{
+                    width: "190px",
+                    objectFit: "contain",
+                  }}
+                />
+              </div>
+              <p className="text-center mt-3">
+                Our courses are recognised by the International Air Transport
+                Association (IATA, Canada), ensuring industry relevance and
+                international recognition.
+              </p>
+            </div>
+
+            {/* KHDA Logo Section */}
+            <div className="col-12 col-lg-4 mt-3 recognitionsBorder d-flex flex-column justify-content-start align-items-center text-center">
+              <div
+                className="d-flex justify-content-center align-items-center"
+                style={{ height: "120px" }}
+              >
+                <img
+                  src={KHDA}
+                  alt="KHDA Logo"
+                  className="img-fluid"
+                  style={{
+                    width: "160px",
+                    objectFit: "contain",
+                  }}
+                />
+              </div>
+              <p className="text-center mt-3">
+                Our courses meet the high standards set by the Knowledge and
+                Human Development Authority for private education.
+              </p>
+            </div>
+
+            {/* ISO Logo Section */}
+            <div className="col-12 col-lg-4 mt-3 d-flex flex-column justify-content-start align-items-center text-center">
+              <div
+                className="d-flex justify-content-center align-items-center"
+                style={{ height: "120px" }}
+              >
+                <img
+                  src={ISO}
+                  alt="ISO Logo"
+                  className="img-fluid"
+                  style={{
+                    width: "190px",
+                    objectFit: "contain",
+                  }}
+                />
+              </div>
+              <p className="text-center mt-3">
+                We are certified by the International Accreditation Forum (IAF)
+                for our commitment to quality management and continuous
                 improvement.
               </p>
             </div>
@@ -1017,7 +1107,7 @@ export default function Home({ handleModalOpen }) {
         >
           <div className="row border aboutdivwidth border-white m-auto">
             <div className="col-12 ">
-              <div className="row">
+              <div className="row d-flex align-items-center justify-content-center">
                 <motion.div
                   ref={ref}
                   className="col-12 col-lg-6 "
@@ -1043,11 +1133,21 @@ export default function Home({ handleModalOpen }) {
                         Course Description
                       </h1>
                       <p className="mt-2 ms-1">
-                      This IATA-certified Travel and Tourism diploma is curated for anybody interested to work in the exciting industry of travel and tourism. It covers 13 essential modules that will make you an expert in arranging travel plans end-to-end, including transport essentials, the role of geography in travel planning, booking tools, airfare details, and the influence of technology on the industry.
+                        This IATA-certified Travel and Tourism diploma is
+                        curated for anybody interested to work in the exciting
+                        industry of travel and tourism. It covers 13 essential
+                        modules that will make you an expert in arranging travel
+                        plans end-to-end, including transport essentials, the
+                        role of geography in travel planning, booking tools,
+                        airfare details, and the influence of technology on the
+                        industry.
                       </p>
 
                       <p className="mt-2 ms-1">
-                      Our offerings extend beyond education, encompassing guaranteed internships at international airports in the UAE, grooming sessions, CV-building support, mock interviews, and more.
+                        Our offerings extend beyond education, encompassing
+                        guaranteed internships at international airports in the
+                        UAE, grooming sessions, CV-building support, mock
+                        interviews, and more.
                       </p>
                     </motion.div>
                   </div>
@@ -1064,12 +1164,20 @@ export default function Home({ handleModalOpen }) {
                     stiffness: 100,
                   }}
                 >
-                  <img
+                  {/* <img
                     src={IATA}
                     alt="IATA Image"
                     className="img-fluid rounded-3 mt-lg-0 hover-scale text-center"
                     // style={{ width: "209px" }}
                     style={{ width: "45%" }}
+                  /> */}
+
+                  <img
+                    src={CourseDescription}
+                    alt="Course Description Image"
+                    className="img-fluid mt-lg-0 text-center"
+                    // style={{ width: "209px" }}
+                    style={{ borderRadius: "3px 30px 3px 30px" }}
                   />
                 </motion.div>
               </div>
@@ -1436,7 +1544,7 @@ export default function Home({ handleModalOpen }) {
             <div className="col-12 col-lg-6 order-2 order-lg-1 mt-2  ">
               <h1
                 className="text-start Aboutsubheading"
-                style={{ color: "#0971CE" }}
+                style={{ color: "#011689" }}
               >
                 Learner’s Profile
               </h1>
@@ -1446,7 +1554,7 @@ export default function Home({ handleModalOpen }) {
                   <FontAwesomeIcon
                     icon={faCircleCheck}
                     className="me-2 flex-shrink-0 mt-1 ms-1"
-                    style={{ color: "#0971CE" }}
+                    style={{ color: "#011689" }}
                   />
                   Travel Agents
                 </li>
@@ -1454,7 +1562,7 @@ export default function Home({ handleModalOpen }) {
                   <FontAwesomeIcon
                     icon={faCircleCheck}
                     className="me-2 flex-shrink-0 mt-1 ms-1"
-                    style={{ color: "#0971CE" }}
+                    style={{ color: "#011689" }}
                   />
                   Airline Reservation Agents
                 </li>
@@ -1462,7 +1570,7 @@ export default function Home({ handleModalOpen }) {
                   <FontAwesomeIcon
                     icon={faCircleCheck}
                     className="me-2 flex-shrink-0 mt-1 ms-1"
-                    style={{ color: "#0971CE" }}
+                    style={{ color: "#011689" }}
                   />
                   Tour Operators
                 </li>
@@ -1470,7 +1578,7 @@ export default function Home({ handleModalOpen }) {
                   <FontAwesomeIcon
                     icon={faCircleCheck}
                     className="me-2 flex-shrink-0 mt-1 ms-1"
-                    style={{ color: "#0971CE" }}
+                    style={{ color: "#011689" }}
                   />
                   Call Center Agents
                 </li>
@@ -1478,7 +1586,7 @@ export default function Home({ handleModalOpen }) {
                   <FontAwesomeIcon
                     icon={faCircleCheck}
                     className="me-2 flex-shrink-0 mt-1 ms-1"
-                    style={{ color: "#0971CE" }}
+                    style={{ color: "#011689" }}
                   />
                   Working professionals interested in the industry
                 </li>
@@ -1486,7 +1594,7 @@ export default function Home({ handleModalOpen }) {
                   <FontAwesomeIcon
                     icon={faCircleCheck}
                     className="me-2 flex-shrink-0 mt-1 ms-1"
-                    style={{ color: "#0971CE" }}
+                    style={{ color: "#011689" }}
                   />
                   People looking to change their career
                 </li>
@@ -1494,7 +1602,7 @@ export default function Home({ handleModalOpen }) {
                   <FontAwesomeIcon
                     icon={faCircleCheck}
                     className="me-2 flex-shrink-0 mt-1 ms-1"
-                    style={{ color: "#0971CE" }}
+                    style={{ color: "#011689" }}
                   />
                   High school graduates
                 </li>
@@ -1502,14 +1610,14 @@ export default function Home({ handleModalOpen }) {
                   <FontAwesomeIcon
                     icon={faCircleCheck}
                     className="me-2 flex-shrink-0 mt-1 ms-1"
-                    style={{ color: "#0971CE" }}
+                    style={{ color: "#011689" }}
                   />
                   Travel enthusiasts
                 </li>
               </ul>
               <div className="col-12 col-lg-6 d-flex justify-content-start mt-3 order-3 order-lg-2 d-none d-lg-block ms-2">
                 <button
-                  className="btn btn-lg Demobutton Demoenquirebuttonwidth  mt-1"
+                  className="btn btn-lg EnquireButton Demoenquirebuttonwidth  mt-1"
                   onClick={(e) => handleEnquireClick(e, "enquire-now")}
                 >
                   Enquire Now
@@ -1527,7 +1635,7 @@ export default function Home({ handleModalOpen }) {
             </div>
             <div className="col-12 mt-2 order-3 d-block d-lg-none ms-3">
               <button
-                className="btn btn-lg Demobutton Demoenquirebuttonwidth  ms-lg-4"
+                className="btn btn-lg EnquireButton Demoenquirebuttonwidth  ms-lg-4"
                 onClick={(e) => handleEnquireClick(e, "enquire-now")}
               >
                 Enquire Now
@@ -1643,7 +1751,7 @@ export default function Home({ handleModalOpen }) {
             <div className="col-12 col-lg-6 order-2 order-lg-1 mt-2 ">
               <h1
                 className="text-start Aboutsubheading"
-                style={{ color: "#0971CE" }}
+                style={{ color: "#011689" }}
               >
                 Career Opportunities{" "}
               </h1>
@@ -1660,7 +1768,7 @@ export default function Home({ handleModalOpen }) {
                   <FontAwesomeIcon
                     icon={faCircleCheck}
                     className="me-2 flex-shrink-0 mt-1 ms-1"
-                    style={{ color: "#0971CE" }}
+                    style={{ color: "#011689" }}
                   />
                   Reservation Agent
                 </li>
@@ -1668,7 +1776,7 @@ export default function Home({ handleModalOpen }) {
                   <FontAwesomeIcon
                     icon={faCircleCheck}
                     className="me-2 flex-shrink-0 mt-1 ms-1"
-                    style={{ color: "#0971CE" }}
+                    style={{ color: "#011689" }}
                   />
                   Travel Consultant
                 </li>
@@ -1676,7 +1784,7 @@ export default function Home({ handleModalOpen }) {
                   <FontAwesomeIcon
                     icon={faCircleCheck}
                     className="me-2 flex-shrink-0 mt-1 ms-1"
-                    style={{ color: "#0971CE" }}
+                    style={{ color: "#011689" }}
                   />
                   Destination Specialist
                 </li>
@@ -1684,7 +1792,7 @@ export default function Home({ handleModalOpen }) {
                   <FontAwesomeIcon
                     icon={faCircleCheck}
                     className="me-2 flex-shrink-0 mt-1 ms-1"
-                    style={{ color: "#0971CE" }}
+                    style={{ color: "#011689" }}
                   />
                   Corporate Travel Consultant
                 </li>
@@ -1692,7 +1800,7 @@ export default function Home({ handleModalOpen }) {
                   <FontAwesomeIcon
                     icon={faCircleCheck}
                     className="me-2 flex-shrink-0 mt-1 ms-1"
-                    style={{ color: "#0971CE" }}
+                    style={{ color: "#011689" }}
                   />
                   Travel Coordinator
                 </li>
@@ -1700,7 +1808,7 @@ export default function Home({ handleModalOpen }) {
                   <FontAwesomeIcon
                     icon={faCircleCheck}
                     className="me-2 flex-shrink-0 mt-1 ms-1"
-                    style={{ color: "#0971CE" }}
+                    style={{ color: "#011689" }}
                   />
                   Ticketing Agent
                 </li>
@@ -1708,7 +1816,7 @@ export default function Home({ handleModalOpen }) {
                   <FontAwesomeIcon
                     icon={faCircleCheck}
                     className="me-2 flex-shrink-0 mt-1 ms-1"
-                    style={{ color: "#0971CE" }}
+                    style={{ color: "#011689" }}
                   />
                   Cruise Consultant
                 </li>
@@ -1716,7 +1824,7 @@ export default function Home({ handleModalOpen }) {
                   <FontAwesomeIcon
                     icon={faCircleCheck}
                     className="me-2 flex-shrink-0 mt-1 ms-1"
-                    style={{ color: "#0971CE" }}
+                    style={{ color: "#011689" }}
                   />
                   Hotel Manager
                 </li>
@@ -1724,7 +1832,7 @@ export default function Home({ handleModalOpen }) {
                   <FontAwesomeIcon
                     icon={faCircleCheck}
                     className="me-2 flex-shrink-0 mt-1 ms-1"
-                    style={{ color: "#0971CE" }}
+                    style={{ color: "#011689" }}
                   />
                   Tour Operator
                 </li>
@@ -1732,14 +1840,14 @@ export default function Home({ handleModalOpen }) {
                   <FontAwesomeIcon
                     icon={faCircleCheck}
                     className="me-2 flex-shrink-0 mt-1 ms-1"
-                    style={{ color: "#0971CE" }}
+                    style={{ color: "#011689" }}
                   />
                   Travel Agency Manager
                 </li>
               </ul>
               <div className="col-12 col-lg-6 d-flex justify-content-start mt-3 order-3 order-lg-2 d-none d-lg-block ms-2">
                 <button
-                  className="btn btn-lg Demobutton Demoenquirebuttonwidth mt-1"
+                  className="btn btn-lg EnquireButton Demoenquirebuttonwidth mt-1"
                   onClick={(e) => handleEnquireClick(e, "enquire-now")}
                 >
                   Enquire Now
@@ -1757,7 +1865,7 @@ export default function Home({ handleModalOpen }) {
             </div>
             <div className="col-12 mt-2 order-3 d-block d-lg-none ms-3">
               <button
-                className="btn btn-lg Demobutton Demoenquirebuttonwidth ms-lg-4"
+                className="btn btn-lg EnquireButton Demoenquirebuttonwidth ms-lg-4"
                 onClick={(e) => handleEnquireClick(e, "enquire-now")}
               >
                 Enquire Now
@@ -1816,7 +1924,7 @@ export default function Home({ handleModalOpen }) {
                 className="Testimonialmainheading"
                 style={{ color: "#011689" }}
               >
-                Testimonials
+                Hear From our Happy Students
               </h1>
             </div>
           </div>
@@ -1841,21 +1949,29 @@ export default function Home({ handleModalOpen }) {
             <div>
               <div className=" p-3 rounded-3 ms-md-2 mt-0 h-auto">
                 <h3 className="text-center mt-3 Testimonialsubheading">
-                Sushmita Bajracharya
+                  Sushmita Bajracharya
                 </h3>
                 <p className="text-center mt-3 Testimonialpara">
-                It was an amazing experience, I’m grateful to be your student. I want to thank entire team of WingsWay Training Institute for the wonderful opportunities to learn and grow. Special thanks to ma'am sheetal and ma'am Tina. Thank you.
+                  It was an amazing experience, I’m grateful to be your student.
+                  I want to thank entire team of WingsWay Training Institute for
+                  the wonderful opportunities to learn and grow. Special thanks
+                  to ma'am sheetal and ma'am Tina. Thank you.
                 </p>
               </div>
             </div>
 
             <div>
               <div className="p-3  rounded-3  mt-0  h-auto">
-                <h3 className="text-center mt-3 Testimonialsubheading">
-                Za
-                </h3>
+                <h3 className="text-center mt-3 Testimonialsubheading">Za</h3>
                 <p className="text-center mt-3 Testimonialpara">
-                I had the privilege of learning from Ms. Sheetal, and it was an incredible experience. Her teaching style is engaging, clear, and interactive, making even the most complex topics easy to understand. She is always approachable and genuinely cares about students' success. Thanks to her dedication and expertise. Thanks to Ms. Fathima who provided valuable information about the Foundation in Travel and Tourism course and supported my admission process. Thank you WingsWay Team.
+                  I had the privilege of learning from Ms. Sheetal, and it was
+                  an incredible experience. Her teaching style is engaging,
+                  clear, and interactive, making even the most complex topics
+                  easy to understand. She is always approachable and genuinely
+                  cares about students' success. Thanks to her dedication and
+                  expertise. Thanks to Ms. Fathima who provided valuable
+                  information about the Foundation in Travel and Tourism course
+                  and supported my admission process. Thank you WingsWay Team.
                 </p>
               </div>
             </div>
@@ -1863,10 +1979,12 @@ export default function Home({ handleModalOpen }) {
             <div>
               <div className="p-3 rounded-3   mt-0 h-auto">
                 <h3 className="text-center mt-3 Testimonialsubheading">
-                Trenah Trevia{" "}
+                  Trenah Trevia{" "}
                 </h3>
                 <p className="text-center mt-3 Testimonialpara">
-                I am glad to be among the students in WingsWay Training Institute. The experience is overwhelming and have gained a lot of knowledge and team work.
+                  I am glad to be among the students in WingsWay Training
+                  Institute. The experience is overwhelming and have gained a
+                  lot of knowledge and team work.
                 </p>
               </div>
             </div>
@@ -1874,11 +1992,15 @@ export default function Home({ handleModalOpen }) {
             <div>
               <div className="p-3  rounded-3  mt-0 h-auto">
                 <h3 className="text-center mt-3 Testimonialsubheading">
-                Dilan Jason
+                  Dilan Jason
                 </h3>
                 <p className="text-center mt-3 Testimonialpara">
                   {" "}
-                  WingsWay has given me an opportunity into something I love which I'm extremely grateful. Ms. Tina's classes are very easy to understand and really enjoyable, I highly recommend WingsWay to anyone who's looking for an upscale in their professional life.
+                  WingsWay has given me an opportunity into something I love
+                  which I'm extremely grateful. Ms. Tina's classes are very easy
+                  to understand and really enjoyable, I highly recommend
+                  WingsWay to anyone who's looking for an upscale in their
+                  professional life.
                 </p>
               </div>
             </div>
@@ -1886,11 +2008,13 @@ export default function Home({ handleModalOpen }) {
             <div>
               <div className="p-3  rounded-3  mt-0 h-auto">
                 <h3 className="text-center mt-3 Testimonialsubheading">
-                Sadia Nasir
+                  Sadia Nasir
                 </h3>
                 <p className="text-center mt-3 Testimonialpara">
                   {" "}
-                  I have completed Foundation in Travel and Tourism course from WingsWay Training Institute. Trainers are very good and very cooperative and helpful.
+                  I have completed Foundation in Travel and Tourism course from
+                  WingsWay Training Institute. Trainers are very good and very
+                  cooperative and helpful.
                 </p>
               </div>
             </div>
@@ -1993,7 +2117,7 @@ export default function Home({ handleModalOpen }) {
                 className="footer-link footerlinktext"
                 onClick={(e) => handleFooterLinkClick(e, "Testimonials")}
               >
-                <span>Testimonial</span>
+                <span>Testimonials</span>
               </a>
             </div>
             <div
