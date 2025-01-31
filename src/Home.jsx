@@ -32,12 +32,14 @@ import EntryQualification from "./Images/EntryQualificationImage.jpg";
 import LearnerProfile from "./Images/LearnerImage.jpg";
 import IATALogo from "./Images/IATALogo.png";
 import CourseDescription from "./Images/CourseDescription.jpg";
+import axios from "axios";
 
 export default function Home({ handleModalOpen }) {
   const [form] = Form.useForm(); // useForm hook for handling form operations
   const [formData, setFormData] = useState(null); // State to store submitted data
   const [phoneNumber, setPhoneNumber] = useState(""); // State for phone number input
   const [countryCode, setCountryCode] = useState("+971"); // Default country code
+  const [pageName, setPageName] = useState("FTTD Landing Page");
 
   const [hasViewed, setHasViewed] = useState(false); // Track if the element is in view
   const [selectWidth, setSelectWidth] = useState("30%");
@@ -248,28 +250,51 @@ export default function Home({ handleModalOpen }) {
     }
   }, [inView]);
 
-  const handleSubmit = (values) => {
+  const handleSubmit = async (values) => {
     // Combine country code and phone number
     const fullPhoneNumber = `${countryCode}${phoneNumber}`;
 
-    // Add fullPhoneNumber to the form data
-    const updatedFormData = {
-      ...values,
-      phone: fullPhoneNumber,
-    };
+    // Prepare the LeadSquared payload
+    const leadData = [
+      { Attribute: "mx_Form_Name", Value: pageName  },
+      { Attribute: "EmailAddress", Value: values.email },
+      { Attribute: "FirstName", Value: values.fname },
+      { Attribute: "LastName", Value: values.lname },
+      { Attribute: "Phone", Value: fullPhoneNumber }
+    ];
+  
+    console.log("Full Phone Number:", fullPhoneNumber);
+    console.log("Lead Data Payload:", JSON.stringify(leadData, null, 2));
 
-    // Log the final form data
-    // console.log(updatedFormData);
+    // Send data to LeadSquared API
+    try {
+      const response = await axios.post(
+        `https://api-us11.leadsquared.com/v2/LeadManagement.svc/Lead.Create?accessKey=u%24ra28238688059c0ebea25000fb9586b34&secretKey=210bed8fcc974684962b61e7a1f65785b19b5c81`,
+        JSON.stringify(leadData), // Explicitly convert to JSON string
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      console.log("API Response:", response.data);
 
-    // Save to state (if needed)
-    setFormData(updatedFormData);
+      // Check if the response is successful
+      if (response.data && response.data.Status === "Success") {
+        // Display success message
+        message.success("Form submitted successfully!");
 
-    // Display success message
-    message.success("Form submitted successfully!");
-
-    // Reset the fields
-    setPhoneNumber(""); // Reset phone number field
-    form.resetFields(); // Reset all form fields
+        // Reset form fields
+        setPhoneNumber(""); // Reset phone number field
+        form.resetFields(); // Reset all form fields
+      } else {
+        // Display error message
+        message.error("Error submitting!");
+      }
+    } catch (error) {
+      console.error("Error submitting form: ", error);
+      message.error("Error submitting form!");
+    }
   };
 
   const handlePhoneNumberChange = (e) => {
@@ -732,6 +757,7 @@ export default function Home({ handleModalOpen }) {
                     className="rounded-5"
                     layout="vertical"
                     onFinish={handleSubmit}
+                    // style={{ backgroundColor: "#001271cc", padding: "20px" }}
                     style={{ padding: "20px" }}
                   >
                     {/* Form Fields */}
